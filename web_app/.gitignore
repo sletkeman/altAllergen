@@ -1,0 +1,40 @@
+.DS_Store
+
+# virtual env
+py_env/
+
+web/node_modules
+
+# secrets
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+app/static
+app/templates
+.terraform
+
+model_run.log
+
+.vscode
+api/static
+api/templates

@@ -1,0 +1,88 @@
+openapi: 3.0.0
+info:
+  description: api documentation
+  version: "1.0.0"
+  title: AltAllergen Api
+servers:
+  - url: http://EC2Co-EcsEl-1W78MOVQ5GW2-1222388112.us-east-1.elb.amazonaws.com/api
+    description: an instance hosted in AWS
+  - url: http://localhost:8080/api
+    description: local development
+paths:
+  /recipe/{recipe_id}:
+    get:
+      operationId: api.recipes.get_recipe
+      tags:
+        - recipies
+      summary: gets similar recipes
+      description: gets similar recipes
+      parameters:
+        - name: recipe_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: Successfully retrieved the recipe
+  /recipes:
+    get:
+      operationId: api.recipes.get_recipes
+      tags:
+        - recipies
+      parameters:
+        - in: query
+          name: title
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: allergen
+          schema:
+            type: array
+            items:
+              type: string
+          required: false
+      summary: gets a recipe
+      description: gets a recipe
+      responses:
+        200:
+          description: Successfully retrieved the recipe
+  /allergens:
+    get:
+      operationId: api.allergens.get_allergens
+      tags:
+        - allergens
+      summary: gets the allergens
+      description: gets the allergens
+      responses:
+        200:
+          description: Successfull
+  /similar/{recipe_id}:
+    get:
+      operationId: api.similar.get_similar
+      tags:
+        - recipies
+      summary: gets similar recipes
+      description: gets similar recipes
+      parameters:
+        - name: recipe_id
+          in: path
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: allergens
+          schema:
+            type: array
+            items:
+              type: string
+          required: false
+        - in: query
+          name: number
+          schema:
+            type: number
+          required: false
+      responses:
+        200:
+          description: Successfully retrieved the recipe
