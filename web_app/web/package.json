@@ -12,7 +12,7 @@
     "core-js": "^3.6.4",
     "d3": "^5.15.1",
     "d3-tip": "^0.9.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "query-string": "^6.11.1",
     "store": "^2.0.12",
     "vue": "^2.6.11",
